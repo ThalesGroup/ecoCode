@@ -1,0 +1,39 @@
+Using Try Catch Finally creates a variable and destroys it which consumes CPU cycles and RAM unnecessarily.
+
+## Noncompliant Code Example
+
+```java
+ try{
+
+    File file = new File(path);
+    FileReader fr = new FileReader(file);
+    BufferedReader br = new BufferedReader(fr);
+    StringBuffer sb = new StringBuffer();
+
+    String line;
+    while((line = br.readLine()) != null){
+        sb.append(line);
+        sb.append("\n");
+        }
+    }
+    catch (Exception e){
+        System.out.println("No such file " + path);
+    }
+    finally {
+        fr.close();
+        System.out.println("Contenu du fichier: ");
+        System.out.println(sb.toString());
+    }
+```
+
+## Compliant Code Example
+
+```java
+  BufferReader reader = new BufferReader(new FileReader(path));
+     String line;
+
+     while(line = reader.readLine() != null){
+         System.out.println(line);
+     }
+     reader.close();
+```
