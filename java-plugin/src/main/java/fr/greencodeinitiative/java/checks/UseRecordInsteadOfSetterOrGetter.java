@@ -13,15 +13,9 @@ import java.util.List;
 
 import static fr.greencodeinitiative.java.checks.UseRecordInsteadOfSetterOrGetter.RULE_KEY;
 
-@Rule(
-        key = UseRecordInsteadOfSetterOrGetter.RULE_KEY,
-        name = "Developpement",
-        description = "<p>Use Records Instead of Setter or Getter</p>",
-        priority = Priority.MINOR,
-        tags = {"bug"})
+@Rule(key = "ECRecord")
 @DeprecatedRuleKey(repositoryKey = "greencodeinitiative-java", ruleKey = "ECRecord")
 public class UseRecordInsteadOfSetterOrGetter extends IssuableSubscriptionVisitor {
-    public static final String RULE_KEY = "ECRecord";
     public static final String MESSAGE_RULE = "Avoid Using Getter and Setter";
 
     private static final MethodMatchers GETTER_SETTER = MethodMatchers.create()
@@ -36,14 +30,11 @@ public class UseRecordInsteadOfSetterOrGetter extends IssuableSubscriptionVisito
     }
     @Override
     public void visitNode(Tree tree){
-
         MethodTree methodTree = (MethodTree) tree;
-
         if(!context.getJavaVersion().isJava17Compatible() || context.getJavaVersion().isJava8Compatible()){
             if(GETTER_SETTER.matches(methodTree)){
                 reportIssue(methodTree, MESSAGE_RULE);
             }
         }
     }
-
 }
