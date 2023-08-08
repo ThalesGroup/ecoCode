@@ -1,0 +1,20 @@
+Avoid Calling System.gc, use another method for a better performance
+
+## Noncompliant Code Example
+
+```java
+public void test(){
+    System.gc();
+    //Some other code ...
+}
+```
+
+## Compliant Code Example
+
+```java
+public void test(){
+    String s = "test";
+    s = null;
+    Runtime.getRuntime().gc();
+}
+```
