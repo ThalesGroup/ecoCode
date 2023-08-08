@@ -1,0 +1,18 @@
+Avoid declare variables in loops
+
+## Noncompliant Code Example
+
+```java
+for(int i = 0; i < 5; i++){
+    int x = i * 2;
+}
+```
+
+## Compliant Code Example
+
+```java
+int x; // Compliant
+for(int i = 0; i < 5; i++){
+    x = i * 2;
+}
+```
