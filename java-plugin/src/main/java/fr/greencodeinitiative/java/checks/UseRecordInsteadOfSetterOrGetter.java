@@ -11,8 +11,10 @@ import org.sonarsource.analyzer.commons.annotations.DeprecatedRuleKey;
 import java.util.Collections;
 import java.util.List;
 
+import static fr.greencodeinitiative.java.checks.UseRecordInsteadOfSetterOrGetter.RULE_KEY;
+
 @Rule(
-        key = "ECRecord",
+        key = UseRecordInsteadOfSetterOrGetter.RULE_KEY,
         name = "Developpement",
         description = "<p>Use Records Instead of Setter or Getter</p>",
         priority = Priority.MINOR,
