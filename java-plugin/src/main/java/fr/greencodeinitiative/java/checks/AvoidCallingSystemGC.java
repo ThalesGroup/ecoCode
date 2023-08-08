@@ -10,17 +10,10 @@ import org.sonarsource.analyzer.commons.annotations.DeprecatedRuleKey;
 import java.util.Collections;
 import java.util.List;
 
-@Rule(
-        key = "ECSystemGc",
-        name = "Developpement",
-        description = "<p>Avoid Calling System.gc </p>",
-        priority = Priority.MINOR,
-        tags = {"bug"})
+@Rule(key = "ECSystemGc")
 @DeprecatedRuleKey(repositoryKey = "greencodeinitiative-java", ruleKey = "ECSystemGc")
 public class AvoidCallingSystemGC extends IssuableSubscriptionVisitor {
-    public static final String RULE_KEY = "ECSystemGc";
     public static final String MESSAGE_RULE = "Avoid Calling System.gc";
-
     private static final String SYSTEM_CLASS = "java.lang.System";
     private static final String GC_METHOD = "gc";
 
@@ -34,7 +27,6 @@ public class AvoidCallingSystemGC extends IssuableSubscriptionVisitor {
         if (isSystemGcMethod(methodInvocationTree)) {
             reportIssue(methodInvocationTree, MESSAGE_RULE);
         }
-
     }
 
     private boolean isSystemGcMethod(MethodInvocationTree methodInvocationTree) {
