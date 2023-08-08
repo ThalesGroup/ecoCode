@@ -1,0 +1,19 @@
+Usage of primitive types over objects is beneficial since the primitive type data is stored on stack memory and the objects
+are stored on heap memory.
+If possible, we can use primitive types instead of objects since data access from stack memory is faster than heap memory.
+
+## Noncompliant Code Example
+
+```java
+Integer count1;
+Double amount1;
+List<`String`> names;
+```
+
+## Compliant Code Example
+
+```java
+int count;
+double amount;
+int[] tab;
+```

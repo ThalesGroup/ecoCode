@@ -1,0 +1,17 @@
+{
+  "title": "Prefer to use primitive type rather than object",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "10min"
+  },
+  "tags": [
+    "eco-design",
+    "performance",
+    "memory",
+    "bug",
+    "ecocode"
+  ],
+  "defaultSeverity": "Minor"
+}
