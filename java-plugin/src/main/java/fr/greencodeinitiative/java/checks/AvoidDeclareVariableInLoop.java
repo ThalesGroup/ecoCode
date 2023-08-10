@@ -9,6 +9,7 @@ import org.sonar.plugins.java.api.tree.StatementTree;
 import org.sonar.plugins.java.api.tree.Tree;
 import org.sonarsource.analyzer.commons.annotations.DeprecatedRuleKey;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -19,7 +20,9 @@ public class AvoidDeclareVariableInLoop extends IssuableSubscriptionVisitor {
 
     @Override
     public List<Tree.Kind> nodesToVisit() {
-        return Collections.singletonList(Tree.Kind.FOR_STATEMENT);
+        return Arrays.asList(
+                Tree.Kind.FOR_EACH_STATEMENT, Tree.Kind.FOR_STATEMENT,
+                Tree.Kind.WHILE_STATEMENT, Tree.Kind.DO_STATEMENT);
     }
 
     @Override
