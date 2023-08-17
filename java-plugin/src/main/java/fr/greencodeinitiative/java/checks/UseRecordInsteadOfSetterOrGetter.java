@@ -28,7 +28,7 @@ public class UseRecordInsteadOfSetterOrGetter extends IssuableSubscriptionVisito
     @Override
     public void visitNode(Tree tree){
         MethodTree methodTree = (MethodTree) tree;
-        if(!context.getJavaVersion().isJava17Compatible() || context.getJavaVersion().isJava8Compatible()){
+        if(context.getJavaVersion().isJava14Compatible() || context.getJavaVersion().isNotSet()){
             if(GETTER_SETTER.matches(methodTree)){
                 reportIssue(methodTree, MESSAGE_RULE);
             }
