@@ -11,13 +11,10 @@ import org.sonarsource.analyzer.commons.annotations.DeprecatedRuleKey;
 import java.util.Collections;
 import java.util.List;
 
-import static fr.greencodeinitiative.java.checks.UseRecordInsteadOfSetterOrGetter.RULE_KEY;
-
 @Rule(key = "ECRecord")
 @DeprecatedRuleKey(repositoryKey = "greencodeinitiative-java", ruleKey = "ECRecord")
 public class UseRecordInsteadOfSetterOrGetter extends IssuableSubscriptionVisitor {
     public static final String MESSAGE_RULE = "Avoid Using Getter and Setter";
-
     private static final MethodMatchers GETTER_SETTER = MethodMatchers.create()
             .ofAnyType()
             .name(name -> name.startsWith("get") || name.startsWith("set"))
