@@ -38,6 +38,7 @@ import fr.greencodeinitiative.java.checks.NoFunctionCallWhenDeclaringForLoop;
 import fr.greencodeinitiative.java.checks.OptimizeReadFileExceptions;
 import fr.greencodeinitiative.java.checks.UnnecessarilyAssignValuesToVariables;
 import fr.greencodeinitiative.java.checks.UseCorrectForLoop;
+import fr.greencodeinitiative.java.checks.AvoidUnoptimizedVectorImages;
 import org.sonar.plugins.java.api.CheckRegistrar;
 import org.sonar.plugins.java.api.JavaCheck;
 import org.sonarsource.api.sonarlint.SonarLintSide;
@@ -69,7 +70,8 @@ public class JavaCheckRegistrar implements CheckRegistrar {
             AvoidUsingGlobalVariablesCheck.class,
             AvoidSetConstantInBatchUpdate.class,
             FreeResourcesOfAutoCloseableInterface.class,
-            AvoidMultipleIfElseStatement.class
+            AvoidMultipleIfElseStatement.class,
+            AvoidUnoptimizedVectorImages.class
     );
 
     /**

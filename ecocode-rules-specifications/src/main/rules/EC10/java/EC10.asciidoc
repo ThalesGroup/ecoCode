@@ -1,0 +1,23 @@
+Avoid unoptimized vector images, without this, you can potential gain: up to 75% KB less on your files
+
+## Noncompliant Code Example
+
+```
+private String testImageFormat2(){
+    String svg = "test/image.svg";
+    String format = testImage("image.svg");
+
+    String imageSVG = "<html><svg width='100' height='100'>" + "<circle cx='50' cy='50' r='40' stroke='green' stroke-width='4' fill='yellow' />" + "</svg></html>";
+    return "<html><img src='xx/xx/image.svg' >" + "</html>" ;
+}
+```
+## Compliant Solution
+
+```
+private void testImage2(){
+    String test = "<svg><g>...</g></g></svg>";
+    String test2 = "<svg><g>...</g><g>...</g></svg>";
+    String test3 = "<svg xmlns:custom=\"...\">...</svg>";
+    String test4 = "<svg><metadata>...</metadata></svg>";
+}
+```
