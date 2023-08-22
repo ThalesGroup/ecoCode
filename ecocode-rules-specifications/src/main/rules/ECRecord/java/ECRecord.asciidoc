@@ -1,0 +1,39 @@
+Avoid usage of native getters or setters. If you are in Java 17 use Records but also if you are in Java 8 or above use Lombok
+
+## Noncompliant Code Example
+
+```java
+public class Student {
+    private String name;
+    private int age;
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+}
+```
+
+## Compliant Code Example for Java 17
+
+```java
+public record Student(String name, int age){
+    // Records generate automatically getters and setters
+}
+```
+
+## Compliant Code Example for Java 8 or above
+
+```java
+import lombok.Getter;
+import lombok.Setter;
+
+public class Student{
+    private @Getter @Setter String name;
+    private @Getter @Setter int age;
+}
+```
+
