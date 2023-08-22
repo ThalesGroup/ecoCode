@@ -1,0 +1,15 @@
+{
+  "title": "Avoid declare variables in loops",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "10min"
+  },
+  "tags": [
+    "eco-design",
+    "bug",
+    "ecocode"
+  ],
+  "defaultSeverity": "Minor"
+}
