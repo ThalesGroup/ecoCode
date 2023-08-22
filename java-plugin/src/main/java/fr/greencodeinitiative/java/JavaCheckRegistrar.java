@@ -39,6 +39,7 @@ import fr.greencodeinitiative.java.checks.OptimizeReadFileExceptions;
 import fr.greencodeinitiative.java.checks.UnnecessarilyAssignValuesToVariables;
 import fr.greencodeinitiative.java.checks.UseCorrectForLoop;
 import fr.greencodeinitiative.java.checks.UseRecordInsteadOfSetterOrGetter;
+import fr.greencodeinitiative.java.checks.OptimizeDatabaseQueries;
 import org.sonar.plugins.java.api.CheckRegistrar;
 import org.sonar.plugins.java.api.JavaCheck;
 import org.sonarsource.api.sonarlint.SonarLintSide;
@@ -71,7 +72,8 @@ public class JavaCheckRegistrar implements CheckRegistrar {
             AvoidSetConstantInBatchUpdate.class,
             FreeResourcesOfAutoCloseableInterface.class,
             AvoidMultipleIfElseStatement.class,
-            UseRecordInsteadOfSetterOrGetter.class
+            UseRecordInsteadOfSetterOrGetter.class,
+            OptimizeDatabaseQueries.class
     );
 
     /**
