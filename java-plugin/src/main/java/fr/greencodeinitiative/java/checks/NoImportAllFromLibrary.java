@@ -11,8 +11,8 @@ import org.sonar.plugins.java.api.tree.TypeTree;
 import org.sonar.plugins.java.api.tree.Tree.Kind;
 import org.sonarsource.analyzer.commons.annotations.DeprecatedRuleKey;
 
-@Rule(key = "ECLibrary")
-@DeprecatedRuleKey(repositoryKey = "greencodeinitiative-java", ruleKey = "ECLibrary")
+@Rule(key = "EC15")
+@DeprecatedRuleKey(repositoryKey = "greencodeinitiative-java", ruleKey = "EC15")
 public class NoImportAllFromLibrary extends IssuableSubscriptionVisitor {
     public static final String MESSAGE_RULE = "Use Primitive Type";
 

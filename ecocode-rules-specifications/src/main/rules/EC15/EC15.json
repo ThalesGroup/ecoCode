@@ -1,0 +1,17 @@
+{
+  "title": "No Import all from libraries",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "10min"
+  },
+  "tags": [
+    "eco-design",
+    "performance",
+    "memory",
+    "bug",
+    "ecocode"
+  ],
+  "defaultSeverity": "Minor"
+}
