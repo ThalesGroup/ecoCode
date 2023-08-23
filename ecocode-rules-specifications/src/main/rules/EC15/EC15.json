@@ -1,5 +1,5 @@
 {
-  "title": "No Import all from libraries",
+  "title": "No Import all from library",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

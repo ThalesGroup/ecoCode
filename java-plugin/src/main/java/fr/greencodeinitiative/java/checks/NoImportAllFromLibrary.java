@@ -14,7 +14,7 @@ import org.sonarsource.analyzer.commons.annotations.DeprecatedRuleKey;
 @Rule(key = "EC15")
 @DeprecatedRuleKey(repositoryKey = "greencodeinitiative-java", ruleKey = "EC15")
 public class NoImportAllFromLibrary extends IssuableSubscriptionVisitor {
-    public static final String MESSAGE_RULE = "Use Primitive Type";
+    public static final String MESSAGE_RULE = "No import all form library";
 
     public List<Kind> nodesToVisit() {
         return Collections.singletonList(Tree.Kind.IMPORT);
