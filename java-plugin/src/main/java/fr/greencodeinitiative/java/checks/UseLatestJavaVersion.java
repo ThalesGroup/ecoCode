@@ -9,11 +9,11 @@ import org.sonarsource.analyzer.commons.annotations.DeprecatedRuleKey;
 import java.util.Collections;
 import java.util.List;
 
-@Rule(key = "ECVersion")
-@DeprecatedRuleKey(repositoryKey = "greencodeinitiative-java", ruleKey = "ECVersion")
+@Rule(key = "EC29")
+@DeprecatedRuleKey(repositoryKey = "greencodeinitiative-java", ruleKey = "EC29")
 public class UseLatestJavaVersion extends IssuableSubscriptionVisitor {
 
-    protected static final String MESSAGERULE = "Use latest version of your environment";
+    protected static final String MESSAGE_RULE = "Use latest version of your environment";
 
     @Override
     public List<Tree.Kind> nodesToVisit() {
@@ -25,7 +25,7 @@ public class UseLatestJavaVersion extends IssuableSubscriptionVisitor {
 
         ClassTree classTree = (ClassTree) tree;
         if (!this.context.getJavaVersion().isJava19Compatible()) {
-            reportIssue(classTree, MESSAGERULE);
+            reportIssue(classTree, MESSAGE_RULE);
         }
     }
 }
