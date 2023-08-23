@@ -1,0 +1,15 @@
+Don't import all your library, just import the required library
+
+## Noncompliant Code Example
+
+```
+    import java.util.*;
+```
+
+## Compliant Solution
+
+```
+    import java.util.Collections;
+    import java.util.List;
+```
+

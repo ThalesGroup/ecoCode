@@ -42,6 +42,7 @@ import fr.greencodeinitiative.java.checks.UseRecordInsteadOfSetterOrGetter;
 import fr.greencodeinitiative.java.checks.OptimizeDatabaseQueries;
 import fr.greencodeinitiative.java.checks.AvoidDeclareVariableInLoop;
 import fr.greencodeinitiative.java.checks.AvoidCallingSystemGC;
+import fr.greencodeinitiative.java.checks.NoImportAllFromLibrary;
 import org.sonar.plugins.java.api.CheckRegistrar;
 import org.sonar.plugins.java.api.JavaCheck;
 import org.sonarsource.api.sonarlint.SonarLintSide;
@@ -77,7 +78,8 @@ public class JavaCheckRegistrar implements CheckRegistrar {
             UseRecordInsteadOfSetterOrGetter.class,
             OptimizeDatabaseQueries.class,
             AvoidDeclareVariableInLoop.class,
-            AvoidCallingSystemGC.class
+            AvoidCallingSystemGC.class,
+            NoImportAllFromLibrary.class
     );
 
     /**
