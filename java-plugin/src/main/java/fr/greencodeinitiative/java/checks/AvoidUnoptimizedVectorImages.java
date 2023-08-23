@@ -9,17 +9,14 @@ import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.sonar.check.Priority;
 import org.sonar.check.Rule;
 import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
 import org.sonar.plugins.java.api.tree.LiteralTree;
 import org.sonar.plugins.java.api.tree.Tree;
 import org.sonar.plugins.java.api.tree.Tree.Kind;
-import org.sonarsource.analyzer.commons.annotations.DeprecatedRuleKey;
 
 @Rule(key = "EC10")
 public class AvoidUnoptimizedVectorImages extends IssuableSubscriptionVisitor {
-    public static final String MESSAGE_RULE = "Avoid Unoptimized Vector Image";
     private static final Pattern LAYERS_PATTERN = Pattern.compile("</g>");
 
     public List<Tree.Kind> nodesToVisit() {
