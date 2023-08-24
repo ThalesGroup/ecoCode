@@ -1,31 +1,15 @@
+public class AvoidUnoptimizedVectorImages {
+    private static final String UNOPTIMIZED_SVG = "<svg><g>...</g></g></svg>"; // Noncompliant
+    private static final String MULTIPLE_LAYERS_SVG = "<svg><g>...</g><g>...</g></svg>"; // Noncompliant
+    private static final String COMMENTS_SVG = "<svg><!-- ... --></svg>";
+    private static final String NAMESPACE_SVG = "<svg xmlns:custom=\"...\">...</svg>"; // Noncompliant
+    private static final String METADATA_SVG = "<svg><metadata>...</metadata></svg>"; // Noncompliant
 
-class AvoidUnoptimizedVectorImages {
-    AvoidUnoptimizedVectorImages(AvoidUnoptimizedVectorImages mc) {
+    public void testMethod() {
+        String unoptimizedImage = UNOPTIMIZED_SVG;
+        String multipleLayersImage = MULTIPLE_LAYERS_SVG;
+        String commentsImage = COMMENTS_SVG;
+        String namespaceImage = NAMESPACE_SVG;
+        String metadataImage = METADATA_SVG;
     }
-
-    private String validSvg = "<svg xmlns=\"http://www.w3.org/2000/svg\">\n" +
-            "    <circle cx=\"50\" cy=\"50\" r=\"40\"/>\n" +
-            "</svg>";
-
-    private String unoptimizedSvgWithComments = "<svg xmlns=\"http://www.w3.org/2000/svg\">\n" +
-            "    <!-- This is a comment -->\n" +
-            "    <circle cx=\"50\" cy=\"50\" r=\"40\"/>\n" + // Noncompliant
-            "</svg>";
-
-    private String unoptimizedSvgWithMultipleLayers = "<svg xmlns=\"http://www.w3.org/2000/svg\">\n" +
-            "    <g></g>\n" +
-            "    <g></g>\n" +
-            "</svg>";
-
-    private String unoptimizedSvgWithWrongNamespace = "<svg xmlns=\"http://www.w3.org/2000/svg\">\n" +
-            "    <circle xmlns:wrong=\"http://www.wrong-namespace.com\" cx=\"50\" cy=\"50\" r=\"40\"/>\n" +
-            "</svg>";
-
-    private String unoptimizedSvgWithMetadata = "<svg xmlns=\"http://www.w3.org/2000/svg\">\n" +
-            "    <metadata></metadata>\n" +
-            "</svg>";
-
-    private String unoptimizedSvgWithoutClosingSvgTag = "<svg xmlns=\"http://www.w3.org/2000/svg\">\n" +
-            "    <circle cx=\"50\" cy=\"50\" r=\"40\"/>\n"; // Noncompliant
-
 }

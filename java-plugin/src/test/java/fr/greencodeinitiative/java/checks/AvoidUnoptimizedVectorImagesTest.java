@@ -8,7 +8,7 @@ public class AvoidUnoptimizedVectorImagesTest {
     void test() {
         CheckVerifier.newVerifier()
                 .onFile("src/test/files/AvoidUnoptimizedVectorImages.java")
-                .withCheck(new AvoidStatementForDMLQueries())
+                .withCheck(new AvoidUnoptimizedVectorImages())
                 .verifyIssues();
     }
 }
